@@ -17,6 +17,22 @@ Aprire il link e accedere con una di queste utenze demo:
 
 (Nella pagina di login c'è un pulsante che precompila le credenziali.)
 
+## Se il link non funziona
+
+Se il deploy è offline (es. crediti di hosting esauriti), si può far girare tutto in locale dal codice di questo repository. Serve **Node.js >= 18**.
+
+```bash
+npm install
+npm run dev
+```
+
+Questo avvia in parallelo il **frontend** (http://localhost:5173) e il **backend** (http://localhost:3001). Si accede su `localhost:5173` con le stesse credenziali demo della tabella sopra.
+
+- Il frontend gira in **modalità demo** (dati mock in-memory): tutte le pagine, i calendari, i report e le tabelle funzionano senza database.
+- Il backend serve solo per la **generazione degli export PDF/DOCX** (calendari, attività, lavatrice, report). È un Express stateless: nessuna configurazione richiesta, parte così com'è.
+
+Se interessa solo navigare l'app senza scaricare PDF, basta `npm run dev:frontend`.
+
 ## Cosa fa l'app
 
 Lato **Admin**:
